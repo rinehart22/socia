@@ -1,0 +1,1 @@
+web: gunicorn social.wsgi --log-file - --log-level debug
