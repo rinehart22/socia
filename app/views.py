@@ -15,7 +15,7 @@ def dashboard(request):
             return redirect("/")
     followed_dweets = Dweet.objects.filter(
         user__profile__in=request.user.profile.follows.all()
-    ).order_by("-created_at")
+    ).order_by("created_at")
 
     
     return render(request, 'dashboard.html', {"form": form,"dweets": followed_dweets})
